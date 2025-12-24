@@ -16,16 +16,16 @@ from eval_code import eval_code
 DEFAULTS = {
     # -------- 数据集--------
     "apps": {
-        "valid_jsonl": "Dataset/APPS/valid.jsonl",
-        "test_jsonl": "Dataset/APPS/test.jsonl",
+        "valid_jsonl": "Datasets/apps/valid.jsonl",
+        "test_jsonl": "Datasets/apps/test.jsonl",
     },
     "codecontests": {
-        "valid_jsonl": "Dataset/CodeContests/valid.jsonl",
-        "test_jsonl": "Dataset/CodeContests/test.jsonl",
+        "valid_jsonl": "Datasets/codecontests/valid.jsonl",
+        "test_jsonl": "Datasets/codecontests/test.jsonl",
     },
     "mbpp": {
-        "valid_jsonl": "Dataset/MBPP/valid.jsonl",
-        "test_jsonl": "Dataset/MBPP/test.jsonl",
+        "valid_jsonl": "Datasets/mbpp/valid.jsonl",
+        "test_jsonl": "Datasets/mbpp/test.jsonl",
     },
 
     # -------- checkpoint 根目录 --------
@@ -475,7 +475,7 @@ def run_infertest(
         f.write(f"val_pass1={best_val:.4f}\n")
         f.write(f"test_pass1={test_pass1:.4f}\n")
         f.write(f"avg_pass_ratio={avg_pass_ratio}\n")
-        f.write(f"avg_pylint_score={avg_pylint}\n")
+        f.write(f"avg_code_smell_score={avg_pylint}\n")
         f.write(f"avg_mi_score={avg_mi}\n")
 
     return {

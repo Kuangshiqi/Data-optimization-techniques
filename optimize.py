@@ -11,9 +11,9 @@ def _normalize_dataset(dataset: str) -> str:
 
 def _normalize_tech(tech: str) -> str:
     t = (tech or "").strip()
-    allowed = {"Aug", "Cle", "Ref", "Sel", "Syn"}
+    allowed = {"aug", "cle", "ref", "sel", "syn"}
     if t not in allowed:
-        raise ValueError("tech must be one of: Aug / Cle / Ref / Sel / Syn")
+        raise ValueError("tech must be one of: aug / cle / ref / sel / syn")
     return t
 
 
@@ -58,8 +58,8 @@ def _run_syn(dataset: str) -> Dict[str, Any]:
 
 def main():
     parser = argparse.ArgumentParser(description="Run approach pipeline by dataset + tech")
-    parser.add_argument("dataset", choices=["mbpp", "apps", "codecontests"])
-    parser.add_argument("tech", choices=["Aug", "Cle", "Ref", "Sel", "Syn"])
+    parser.add_argument("--dataset", required=True, choices=["mbpp", "apps", "codecontests"])
+    parser.add_argument("--tech", required=True, choices=["aug", "cle", "ref", "sel", "syn"])
     args = parser.parse_args()
 
     res = run_tech(dataset=args.dataset, tech=args.tech)
