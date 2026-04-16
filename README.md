@@ -119,3 +119,7 @@ Results/
 ## 5. Acknowledgements
 
 We are very grateful that the authors of SPAT, Quality in Quality out..., WaveCoder, SCAR, Autopep8, Autoflake, Docformatter, Unify  make their code publicly available so that we can build this repository on top of their code. 
+
+## 6. Repeated Experiments
+<img src="./individual.png" alt="individual techniques" width="1000">
+<img src="./combined.png" alt="combined techniques" width="1000">
